@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace GymManagementDAL.Entities
 {
-    [Table("Member")]
+    [Table("Members")]
     public class HealthRecord : BaseEntity
     {
         public decimal Weight { get; set; }

@@ -8,13 +8,16 @@ using System.Threading.Tasks;
 
 namespace GymManagementDAL.Data.Configurations
 {
-    public class TrainerConfiguration : IEntityTypeConfiguration<Trainer>
+    public class TrainerConfiguration : GymUserConfiguration<Trainer>, IEntityTypeConfiguration<Trainer>
     {
-        public void Configure(Microsoft.EntityFrameworkCore.Metadata.Builders.EntityTypeBuilder<Trainer> builder)
+        public new void Configure(Microsoft.EntityFrameworkCore.Metadata.Builders.EntityTypeBuilder<Trainer> builder)
         {
             builder.Property(x => x.CreatedAt)
                 .HasColumnName("HirDate")
                 .HasDefaultValueSql("GETDATE()");
+
+
+            base.Configure(builder);
         }
     }
     
