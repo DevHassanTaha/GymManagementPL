@@ -7,6 +7,17 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Content Remove="wwwroot\Files\categories.json" />
+    <Content Remove="wwwroot\Files\plans.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\Files\categories.json" />
+    <None Include="wwwroot\Files\plans.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="15.0.1" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="9.0.9">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>

@@ -26,6 +26,7 @@ namespace GymManagementDAL.Data.Configurations
                 x.HasCheckConstraint("Session_CapacityCheck", "Capacity between 1 and 25");
                 x.HasCheckConstraint("Session_EndDateCheck", "EndDate > StartDate");
             });
+
         }
     }
 }
