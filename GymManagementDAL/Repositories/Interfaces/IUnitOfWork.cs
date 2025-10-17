@@ -1,4 +1,5 @@
 ﻿using GymManagementDAL.Entities;
+using GymManagementDAL.Repositories.Classes;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,5 +12,6 @@ namespace GymManagementDAL.Repositories.Interfaces
     {
         IGenericRepository<TEntity> GetRepository<TEntity>() where TEntity : BaseEntity;
         int SaveChanges();
+        ISessionRepository SessionRepository { get; set; }
     }
 }
