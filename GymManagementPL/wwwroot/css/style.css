@@ -1,4 +1,4 @@
-/* ^ global style */
+﻿/* ^ global style */
 
 :root {
     --primary-color: #070093;
@@ -106,7 +106,17 @@ header.home-section header p {
         }
 }
 
+header.home-section .buttons button.explore-more:hover {
+    color: #fff;
+    border-color: var(--primary-color);
+    background-color: var(--primary-color);
+}
 
+header.home-section .buttons button.get-started:hover {
+    background-color: #fff !important;
+    color: var(--primary-color) !important;
+    border-color: var(--primary-color);
+}
 
 /* ^ about section */
 section.about {
@@ -428,11 +438,9 @@ footer .footer-content .location p {
     .page table td.action input {
         visibility: hidden;
     }
-
     .page table td.action {
         position: relative; /* anchor for absolute children */
     }
-
         .page table td.action ul.action-menu {
             position: absolute;
             top: 100%; /* directly below the dots */
@@ -448,26 +456,24 @@ footer .footer-content .location p {
             display: none;
         }
 
-            .page table td.action ul.action-menu li {
-                padding: 8px 12px;
-                border-radius: 6px;
-                cursor: pointer;
-                display: flex;
-                align-items: center;
-                gap: 8px;
-            }
-
-            .page table td.action ul.action-menu button {
-                padding: 0 !important;
-            }
-
-            .page table td.action ul.action-menu li:hover {
-                background-color: #f5f5f5;
-            }
-
-        .page table td.action:has(input:checked) input + ul.action-menu {
-            display: block;
+        .page table td.action ul.action-menu li {
+            padding: 8px 12px;
+            border-radius: 6px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 8px;
         }
+
+        .page table td.action ul.action-menu button {
+            padding: 0 !important;
+        }
+        .page table td.action ul.action-menu li:hover {
+            background-color: #f5f5f5;
+        }
+    .page table td.action:has(input:checked) input + ul.action-menu {
+        display: block;
+    }
 
 /* ^ Modals */
 
@@ -479,7 +485,7 @@ footer .footer-content .location p {
     margin-left: -20px;
 }
 
-    .card-details ul li {
+.card-details ul li {
         cursor: pointer;
     }
 
@@ -492,7 +498,6 @@ footer .footer-content .location p {
     background-color: rgba(7, 0, 147, 0.1);
     border-radius: 10px;
 }
-
 .plan-card {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
@@ -501,7 +506,6 @@ footer .footer-content .location p {
         transform: translateY(-5px);
         box-shadow: 0 10px 25px rgba(0,0,0,0.1) !important;
     }
-
 .session-card {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
@@ -518,7 +522,6 @@ footer .footer-content .location p {
 .bg-primary {
     background-color: #070093 !important;
 }
-
 .icon-box {
     min-width: 50px;
 }
@@ -531,7 +534,6 @@ footer .footer-content .location p {
         box-shadow: 0 4px 8px rgba(0,0,0,0.1);
         transform: translateY(-2px);
     }
-
 @media screen and (max-width: 576px) {
     section.about .characters {
         transform: translateX(-40%);
@@ -554,36 +556,3 @@ footer .footer-content .location p {
         font-size: 18px !important;
     }
 }
-
-.get-started {
-    background-color: var(--primary-color);
-    color: #fff;
-    border: 2px solid var(--primary-color);
-    transition: all 0.3s ease;
-    border-radius: 30px;
-    padding: 10px 20px;
-}
-
-    .get-started:hover {
-        background-color: transparent;
-        color: var(--primary-color);
-        border-color: var(--primary-color);
-        -webkit-background-clip: border-box; /* cancel any text-clip */
-        background-clip: border-box; /* ensure normal coloring */
-        -webkit-text-fill-color: var(--primary-color); /* fix text rendering */
-    }
-.explore-more {
-    background-color: transparent;
-    color: var(--primary-color);
-    border: 2px solid var(--primary-color);
-    border-radius: 30px;
-    transition: all 0.3s ease;
-    -webkit-text-fill-color: var(--primary-color); /* fix Chrome text rendering */
-}
-
-    .explore-more:hover {
-        background-color: var(--primary-color);
-        color: #fff;
-        border-color: var(--primary-color);
-        -webkit-text-fill-color: #fff; /* ensures text stays visible on hover */
-    }

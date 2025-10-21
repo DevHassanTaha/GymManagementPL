@@ -5,6 +5,8 @@ using GymManagementDAL.Data.Contexts;
 using GymManagementDAL.Data.DataSeed;
 using GymManagementDAL.Repositories.Classes;
 using GymManagementDAL.Repositories.Interfaces;
+using GymManagementSystemBLL.Services.Classes;
+using GymManagementSystemBLL.Services.Interfaces;
 using Microsoft.EntityFrameworkCore;
 
 namespace GymManagementPL

@@ -42,10 +42,10 @@ namespace GymManagementBLL.Services.Classes
                     },
                     HealthRecord = new HealthRecord
                     {
-                        Height = model.healthRecordViewModel.Height,
-                        Weight = model.healthRecordViewModel.Weight,
-                        BloodType = model.healthRecordViewModel.BloodType,
-                        Note = model.healthRecordViewModel.Note
+                        Height = model.HealthRecordViewModel.Height,
+                        Weight = model.HealthRecordViewModel.Weight,
+                        BloodType = model.HealthRecordViewModel.BloodType,
+                        Note = model.HealthRecordViewModel.Note
                     }
 
                 };
@@ -183,10 +183,12 @@ namespace GymManagementBLL.Services.Classes
             var member = _unitOfWork.GetRepository<Member>().GetById(memberId);
             if (member == null)
                 return false;
+            var emailExist = _unitOfWork.GetRepository<Member>()
+                            .GetAll(x => x.Email == model.Email && x.Id != memberId);
 
-            if (IsEmailExists(model.Email))
-                return false;
-            if (IsPhoneExists(model.Phone))
+            var phoneExist = _unitOfWork.GetRepository<Member>()
+                             .GetAll(x => x.Phone == model.Phone && x.Id != memberId);
+            if (emailExist.Any() || phoneExist.Any())
                 return false;
 
             member.Name = model.Name;
