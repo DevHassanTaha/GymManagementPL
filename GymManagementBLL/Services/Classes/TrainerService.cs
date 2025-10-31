@@ -125,14 +125,14 @@ namespace GymManagementSystemBLL.Services.Classes
 
 		private bool IsEmailExists(string email)
 		{
-			var existing = _unitOfWork.GetRepository<Member>().GetAll(
+			var existing = _unitOfWork.GetRepository<Trainer>().GetAll(
 				m => m.Email == email).Any();
 			return existing;
 		}
 
 		private bool IsPhoneExists(string phone)
 		{
-			var existing = _unitOfWork.GetRepository<Member>().GetAll(
+			var existing = _unitOfWork.GetRepository<Trainer>().GetAll(
 				m => m.Phone == phone).Any();
 			return existing;
 		}

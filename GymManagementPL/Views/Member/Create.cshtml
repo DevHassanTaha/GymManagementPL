@@ -1,4 +1,6 @@
-﻿@model CreateMemberViewModel
+﻿@using GymManagementBLL.ViewModels.MemberViewModels
+@using GymManagementDAL.Entities.Enum
+@model CreateMemberViewModel
 @{
     ViewData["Title"] = "Create Member";
 }
@@ -8,7 +10,6 @@
 </header>
 @Html.ValidationMessage("DataMissed", new { @class = "text-danger" })
 <form method="post" asp-action="CreateMember">
-
     <!-- Step navigation -->
     <ul class="nav nav-tabs mb-4" id="addMemberTabs" role="tablist">
         <li class="nav-item" role="presentation">
@@ -137,9 +138,6 @@
 
 </form>
 
-
 @section Scripts {
-    @{
-        <partial name="_ValidationScriptsPartial" />
-    }
+    <partial name="_ValidationScriptsPartial" />
 }
